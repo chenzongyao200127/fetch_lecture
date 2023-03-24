@@ -4,6 +4,7 @@ import requests, json
 from login import login
 import time
 import threading
+from seuAutoLogin import seuLogin
 
 
 # 这是一个示例 Python 脚本。
@@ -61,7 +62,7 @@ if __name__ == '__main__':
     print("请输入密码:")
     password = input()
     print("开始登陆")
-    s = login(user_name, password)
+    s = seuLogin(user_name, password)
     while s is False or s is None:
         print("请重新登陆")
         print("请输入帐号:")

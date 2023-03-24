@@ -2,6 +2,7 @@ import requests
 import json
 from ids_encrypt import encryptAES
 from bs4 import BeautifulSoup
+from pprint import pprint
 
 
 # 登录信息门户，返回登录后的session
@@ -27,6 +28,8 @@ def login(cardnum, password):
 
     res = ss.get('http://ehall.seu.edu.cn/jsonp/userDesktopInfo.json')
     json_res = json.loads(res.text)
+    pprint(json_res)
+    
     try:
         name = json_res["userName"]
         print(name[0], "** 登陆成功！")
